@@ -1,60 +1,285 @@
+/* General body styles */
 body {
-    font-family: sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-image: url('https://sebastianrkdesigns.wordpress.com/wp-content/uploads/2017/02/website-background4.gif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #1c1e21;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Main container for login and signup pages */
+.auth-container {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f0f2f5;
-    margin: 0;
+    padding: 0 20px;
 }
 
-.container {
-    width: 400px;
-    padding: 2rem;
-    background-color: #fff;
+.auth-card {
+    background-color: rgba(255, 255, 255, 0.8);
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin: 40px 0;
+    padding: 20px;
+    width: 100%;
+    max-width: 396px;
     text-align: center;
 }
 
-h1 {
-    margin-bottom: 1.5rem;
+.auth-card h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
-.form-group {
-    margin-bottom: 1rem;
-    text-align: left;
+.auth-card .form-group {
+    margin-bottom: 15px;
 }
 
-label {
-    display: block;
-    margin-bottom: 0.5rem;
-}
-
-input {
+.auth-card input {
     width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 14px 16px;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    font-size: 16px;
     box-sizing: border-box;
 }
 
-button {
+.auth-card button {
     width: 100%;
-    padding: 0.75rem;
+    padding: 14px 16px;
     border: none;
-    border-radius: 4px;
-    background-color: #007bff;
+    border-radius: 6px;
+    background-color: #1877f2;
     color: #fff;
-    font-size: 1rem;
+    font-size: 20px;
+    font-weight: bold;
     cursor: pointer;
+    margin-bottom: 15px;
 }
 
-#signup-form button {
-    background-color: #28a745;
-}
-
-.signup-link, .login-link {
+.auth-card .separator {
+    align-items: center;
+    border-bottom: 1px solid #dadde1;
+    display: flex;
+    margin: 20px 16px;
     text-align: center;
-    margin-top: 1rem;
+}
+
+.auth-card .auth-link {
+    font-size: 14px;
+}
+
+.auth-card .auth-link a {
+    color: #1877f2;
+    text-decoration: none;
+}
+
+.auth-card .auth-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* Dark mode toggle switch */
+.dark-mode-toggle {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode-toggle span {
+    margin-left: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Dashboard styles */
+
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 275px 1fr 350px;
+    gap: 20px;
+    max-width: 1265px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.sidebar {
+    position: sticky;
+    top: 20px;
+}
+
+.main-content {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.post-creation {
+    padding: 20px;
+    border-bottom: 1px solid #e6ecf0;
+}
+
+.post-creation textarea {
+    width: 100%;
+    border: none;
+    resize: none;
+    font-size: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    outline: none;
+    background-color: transparent;
+}
+
+.post-creation button {
+    background-color: #1da1f2;
+    color: white;
+    border: none;
+    border-radius: 9999px;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    float: right;
+    margin-top: 10px;
+}
+
+.post-creation button:hover {
+    background-color: #1a91da;
+}
+
+#feed {
+    padding: 0;
+}
+
+.tweet-card {
+    padding: 20px;
+    border-bottom: 1px solid #e6ecf0;
+}
+
+.tweet-card:last-child {
+    border-bottom: none;
+}
+
+.tweet-card p {
+    margin: 0 0 10px;
+}
+
+.tweet-card small {
+    color: #657786;
+}
+
+.widgets {
+    position: sticky;
+    top: 20px;
+}
+
+.user-list-card {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.user-list-card h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.user-list-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.user-list-card li {
+    margin-bottom: 10px;
+}
+
+#user-info {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+#logout-button {
+    background-color: #e0245e;
+    color: white;
+    border: none;
+    border-radius: 9999px;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
 }

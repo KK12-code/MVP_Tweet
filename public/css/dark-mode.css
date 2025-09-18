@@ -1,0 +1,49 @@
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #15202b;
+    color: #ffffff;
+}
+
+.dark-mode .auth-card, 
+.dark-mode .main-content, 
+.dark-mode .widgets .user-list-card, 
+.dark-mode #user-info {
+    background-color: #192734;
+    border-color: #38444d;
+}
+
+.dark-mode .auth-card h1, 
+.dark-mode .auth-card .auth-link p, 
+.dark-mode .tweet-card p, 
+.dark-mode .user-list-card h2, 
+.dark-mode #user-info #welcome-username {
+    color: #ffffff;
+}
+
+.dark-mode .auth-card input {
+    background-color: #253341;
+    border-color: #38444d;
+    color: #ffffff;
+}
+
+.dark-mode .auth-card .separator {
+    border-bottom-color: #38444d;
+}
+
+.dark-mode .tweet-card {
+    border-bottom-color: #38444d;
+}
+
+.dark-mode .tweet-card small {
+    color: #8899a6;
+}
+
+.dark-mode .post-creation textarea {
+    background-color: #192734;
+    color: #ffffff;
+}
+
+.dark-mode .post-creation {
+    border-bottom-color: #38444d;
+}
